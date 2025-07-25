@@ -6603,7 +6603,7 @@ MonoBehaviour:
   bonusdata: []
   _jsManager: {fileID: 500036493}
   JSManager: {fileID: 2099291374}
-  TestToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3N2JhM2QzOTgxYmU0MzlkMjkyYzgzYSIsInVzZXJuYW1lIjoiTWVldCIsInJvbGUiOiJwbGF5ZXIiLCJpYXQiOjE3MzgzMDAxNjcsImV4cCI6MTczODkwNDk2N30.oggq2kNh8PmYQvF0aLTNKLBTdraqpLSArWrS9yzqlEY
+  TestToken: 76b0213471ef4b8396a53921bd56c42f
 --- !u!114 &500036493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10270,6 +10270,57 @@ RectTransform:
   m_AnchoredPosition: {x: 20.589996, y: 0}
   m_SizeDelta: {x: -41.19, y: -0.000061035}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &809946467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 809946468}
+  - component: {fileID: 809946469}
+  m_Layer: 0
+  m_Name: OC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &809946468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809946467}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &809946469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809946467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb14a8ccfdac645b789de603880bebf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIWrapper: {fileID: 1485219722}
+  CanvasScaler: {fileID: 51930702}
+  MatchWidth: 0.25
+  MatchHeight: 1
+  PortraitMatchWandH: 0.5
+  transitionDuration: 0.5
+  waitForRotation: 1
 --- !u!1 &826879892
 GameObject:
   m_ObjectHideFlags: 0
@@ -24534,3 +24585,4 @@ SceneRoots:
   - {fileID: 500036491}
   - {fileID: 4348722528141322213}
   - {fileID: 2099291375}
+  - {fileID: 809946468}
