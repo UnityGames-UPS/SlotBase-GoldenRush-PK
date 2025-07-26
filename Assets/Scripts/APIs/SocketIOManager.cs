@@ -432,6 +432,7 @@ public class SocketIOManager : MonoBehaviour
 #if UNITY_WEBGL && !UNITY_EDITOR
         JSManager.SendCustomMessage("OnEnter");
 #endif
+ RaycastBlocker.SetActive(false);
     }
 
     internal void AccumulateResult(int currBet)
