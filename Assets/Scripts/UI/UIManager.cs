@@ -378,7 +378,7 @@ public class UIManager : MonoBehaviour
         OpenPopup(LBPopup_Object);
     }
 
-    internal void DisconnectionPopup(bool isReconnection)
+    internal void DisconnectionPopup()
     {
         //if (isReconnection)
         //{
@@ -393,6 +393,23 @@ public class UIManager : MonoBehaviour
             }
         //}
     }
+    
+    internal void CheckAndClosePopups()
+  {
+    if (ReconnectPopup_Object.activeInHierarchy)
+    {
+      ClosePopup(ReconnectPopup_Object);
+    }
+    if (DisconnectPopup_Object.activeInHierarchy)
+    {
+      ClosePopup(DisconnectPopup_Object);
+    }
+  }
+
+  internal void ReconnectionPopup()
+  {
+    OpenPopup(ReconnectPopup_Object);
+  }
 
 
     private void disableMegaWinOnPress()
@@ -401,7 +418,7 @@ public class UIManager : MonoBehaviour
         megawin_TweenOne?.Kill();
         megawin_TweenTwo?.Kill();
         ClosePopup(WinPopup_Object);
-        Invoke("disableMwinPopupReset",2f);
+        Invoke("disableMwinPopupReset", 2f);
     }
 
     internal void disableMwinPopupReset()
