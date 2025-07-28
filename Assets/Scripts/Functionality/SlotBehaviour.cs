@@ -627,6 +627,7 @@ public class SlotBehaviour : MonoBehaviour
             yield return StopTweening(5, Slot_Transform[i], i, StopSpinToggle);
         }
         StopSpinToggle = false;
+        if (audioController) audioController.StopWLAaudio();
         yield return alltweens[^1].WaitForCompletion();
         KillAllTweens();
         if (SocketManager.resultData.payload.winAmount > 0)
@@ -856,7 +857,7 @@ public class SlotBehaviour : MonoBehaviour
         List<int> y_points = null;
         if (LineId.Count > 0)
         {
-            if (audioController) audioController.PlayWLAudio("win");
+          //  if (audioController) audioController.PlayWLAudio("win");
 
             for (int i = 0; i < LineId.Count; i++)
             {

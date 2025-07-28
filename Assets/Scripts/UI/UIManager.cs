@@ -316,6 +316,7 @@ public class UIManager : MonoBehaviour
 
     internal void PopulateWin(int value, double amount)
     {
+         if (audioController) audioController.PlayWLAudio("win");
         Debug.Log($" PopulateWin called with value: {value}, amount: {amount}");
         switch (value)
         {
