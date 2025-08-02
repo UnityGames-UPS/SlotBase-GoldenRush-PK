@@ -226,9 +226,9 @@ public class SocketIOManager : MonoBehaviour
     private void OnError(Error err)
     {
         Debug.LogError("Error: " + err);
-    #if Unity_WEBGL && !UNITY_EDITOR
+#if Unity_WEBGL && !UNITY_EDITOR
         JSManager.SendCustomMessage("error");
-        #endif
+#endif
     }
 
     private void OnListenEvent(string data)
@@ -325,25 +325,25 @@ public class SocketIOManager : MonoBehaviour
     }
 
     internal IEnumerator CloseSocket() //Back2 Start
-  {
-    RaycastBlocker.SetActive(true);
-    ResetPingRoutine();
+    {
+        RaycastBlocker.SetActive(true);
+        ResetPingRoutine();
 
-    Debug.Log("Closing Socket");
+        Debug.Log("Closing Socket");
 
-    manager?.Close();
-    manager = null;
+        manager?.Close();
+        manager = null;
 
-    Debug.Log("Waiting for socket to close");
+        Debug.Log("Waiting for socket to close");
 
-    yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.5f);
 
-    Debug.Log("Socket Closed");
+        Debug.Log("Socket Closed");
 
 #if UNITY_WEBGL && !UNITY_EDITOR
     JSManager.SendCustomMessage("OnExit"); //Telling the react platform user wants to quit and go back to homepage
 #endif
-  } //Back2 end
+    } //Back2 end
 
     internal void ReactNativeCallOnFailedToConnect() //BackendChanges
     {
@@ -432,7 +432,13 @@ public class SocketIOManager : MonoBehaviour
 #if UNITY_WEBGL && !UNITY_EDITOR
         JSManager.SendCustomMessage("OnEnter");
 #endif
- RaycastBlocker.SetActive(false);
+        RaycastBlocker.SetActive(false);
+    }
+
+    void CloseGame()
+    {
+        Debug.Log("Unity: Closing Game");
+        StartCoroutine(CloseSocket());
     }
 
     internal void AccumulateResult(int currBet)
